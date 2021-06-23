@@ -2,7 +2,7 @@ package io.jenetics.sphere;
 
 public class DebugtestSphere {
 	 public static void main(String[] args) {
-		    double[] rep = new double[] { 0.1, 0.2 };
+		    double[] rep = new double[] { 0.0, 0.0 };
 		    double   res = sphere(rep);
 		    System.out.println("res: "+res);
 		  }

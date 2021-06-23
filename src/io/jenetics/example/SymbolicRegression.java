@@ -113,6 +113,8 @@ public class SymbolicRegression {
 		System.out.println("Error:       " + REGRESSION.error(tree));
 		System.out.println("Best generation: " + result.generation());
 		System.out.println("Best result:  " + result.bestFitness());
+		System.out.println("WorstFitness:    "+ result.worstFitness());
+		System.out.println(result.toBestEvolutionResult());
 	}
 
 	// The function we want to determine.
