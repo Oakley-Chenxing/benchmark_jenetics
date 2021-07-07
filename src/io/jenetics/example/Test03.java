@@ -6,10 +6,13 @@ import io.jenetics.engine.Codec;
 import io.jenetics.DoubleGene;
 import io.jenetics.engine.Codecs;
 import io.jenetics.engine.Engine;
+import io.jenetics.engine.EvolutionResult;
 import io.jenetics.engine.EvolutionStatistics;
 import io.jenetics.util.DoubleRange;
 
 import static io.jenetics.engine.EvolutionResult.toBestPhenotype;
+
+import java.util.stream.Stream;
 
 import io.jenetics.Chromosome;
 
@@ -36,7 +39,7 @@ public class Test03 {
                 .peek(statistics)
                 .collect(toBestPhenotype());
 
-        Object[] bestPosition = best.genotype().chromosome().toSeq().asList().toArray();;
+        Object[] bestPosition = ((Stream<EvolutionResult<DoubleGene, Double>>) best.genotype().chromosome()).toArray();
         double result=best.fitness();
         for (int i = 0; i < bestPosition.length; i++) {
             DoubleGene dg = (DoubleGene) bestPosition[i];
